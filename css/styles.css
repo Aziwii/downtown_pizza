@@ -55,6 +55,18 @@ table {
   position: center;
 }
 
+tbody tr:nth-child(even) {
+  background-color: rgb(252, 213, 213);
+}
+
+tbody tr:hover {
+  background: #ff8282;
+}
+
+thead {
+    background: #ff9e9e;
+}
+
 tfoot {
   text-align: right;
   background: #ff9e9e;
