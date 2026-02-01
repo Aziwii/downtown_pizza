@@ -3,44 +3,130 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reference: Conference Reg</title>
-  <link rel="stylesheet" href="conference_style.css">
+  <title>Downtown Pizza</title>
+  <link rel="stylesheet" href="css\styles.css">
 </head>
+<header>
+  <h1 class="">Downtown Pizzaria</h1>
+  <p>One stop shop for the best pizza on the block</p>
+</header>
 
 <body>
-  <main class="card">
-    <h1>Reference: Conference Reg</h1>
-    <p>Analyze this code to help you build the Pizza Assignment.</p>
+  <main class="main-container">
+  <div class="form-child">
+    
 
-    <form action="#" method="post">
-      <fieldset>
-        <legend>Attendee Info (Grid Layout)</legend>
+    <form action="#" method="get">
+      <fieldset class="form-grid">
+        <legend>Customer Information (Grid Layout)</legend>
         <div class="form-grid">
-          <label for="email">Email (Required):</label>
-          <input type="email" id="email" required placeholder="test@test.com">
+          <label for="name">Name (Required):</label>
+          <input type="text" id="name" required placeholder="Joe" minlength="2" required>
 
-          <label for="web">Website (Pattern):</label>
-          <input
-            type="url"
-            id="web"
-            required
-            pattern="https://.+"
-            placeholder="Must start with https://">
+          <label for="name">Address (Required):</label>
+          <input type="text" id="address" required placeholder="1234 Lane NW" required>
+
+          <label for="phone">Phone Number: </label>
+          <input type="tel" id="phone" name="phone"
+            placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" autocomplete="tel" required>
         </div>
       </fieldset>
 
-      <fieldset>
-        <legend>Preferences (Flex Layout)</legend>
-        <label>Dietary Restrictions:</label>
+      <fieldset class="form-grid">
+        <legend>Order Options (Flex Layout)</legend>
+        <label for="crust">Crust:</label>
+
+        <div class="options-row" id="crust">
+          
+          <label for="thin"><input type="radio" id="thin" name="crust" value="thin" checked/>Thin</label>          
+          <label for="classic"><input type="radio" id="classic" name="crust" value="classic"/>Classic</label>
+          <label for="deepdish"><input type="radio" id="deepdish" name="crust" value="deepdish"/>Deep Dish</label>
+        </div>
+
+        <label>Toppings:</label>
+        <div class="options-row">
+          <input type="checkbox"id="cheese" name="cheese" checked/>
+          <label for="cheese">Cheese</label>
+
+          <input type="checkbox"id="pepperoni" name="pepperoni" />
+          <label for="pepperoni">Pepperoni</label>
+
+          <input type="checkbox"id="ham" name="ham" />
+          <label for="ham">Ham</label>
+
+          <input type="checkbox"id="sausage" name="sausage" />
+          <label for="sausage">Sausage</label>
+        </div>
+
+        <label>Number of Items:</label>
         <div class="flex-row">
-          <label><input type="checkbox"> Gluten Free</label>
-          <label><input type="checkbox"> Vegan</label>
-          <label><input type="checkbox"> Halal</label>
+          <input type="number" id="itemcount" name="itemcount" value="1" min="1" max="50"/>
         </div>
       </fieldset>
 
-      <button type="submit">Register</button>
+      <fieldset class="form-grid">
+        <legend>Order Payment</legend>
+        <label>Delivery Instructions:</label>
+
+        <textarea id="instructions" name="instructions" rows="3" cols="30" placeholder="optional">
+        </textarea>
+
+        <label>Delivery Time: </label>
+        <input type="datetime-local" id="deliver-time" name="deliver-time" min="2026-01-31T22:00" required/>
+        <label for="payment-type">Payment Method:</label>
+        <select name="payment" id="payment-type" required>
+          <option value="cash">Cash</option>
+          <option value="card">Card</option>
+          <option value="debit">Debit</option>
+        </select>
+      </fieldset>
+
+      <div class="button-flex">
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+      </div>
     </form>
+  </div>
+  <div class="table-child">
+    <aside>
+      <table border="1">
+        <caption>Order Summary</caption>
+        <thead>
+          <tr>
+            <th scope="col">Descriptor</th>
+            <th scope="col">Choices</th>
+            <th scope="col">Payment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Base Pizza</th>
+            <td>Large (12"), Thin Crust</td>
+            <td>$16.99</td>
+          </tr>
+
+          <tr>
+            <th scope="row">Toppings</th>
+            <td>Cheese, Pepperoni</td>
+            <td>$3.50</td>
+          </tr>
+
+          <tr>
+            <th scope="row">Delivery Fee</th>
+            <td>Standard Delivery</td>
+            <td>$4.50</td>
+          </tr>
+
+          <tfoot>
+            <th scope="row" colspan="2">Total</th>
+            <td id="total-cost">$24.99</td>
+          </tr>
+        </tbody>
+      </table>
+    </aside>
+    
+  </div>
   </main>
+
 </body>
 </html>

@@ -1,0 +1,151 @@
+body {
+  font-family: helvetica;
+  background: #ff9e9e;
+  padding: 10px;
+}
+
+
+
+.main-container {
+  background: rgb(246, 223, 223);
+  display: grid;
+  grid-template-areas: "header" "forms" "table";
+  grid-template-columns: 2fr 1fr;
+  gap: 4px;
+  padding: 20px;
+  margin: 0 auto;
+  border-width: 5px;
+  border-radius: 12px;
+  border-color: red; 
+}
+
+
+.form-child {
+  display:grid;
+  grid-template-areas: "labels" "inputs";
+  grid-template-columns: 1fr 2fr;
+
+}
+
+
+
+fieldset {
+  margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  border: 3px solid rgb(255, 162, 162);
+  border-radius: 12px;
+}
+
+
+/* Grid example */
+.form-grid {
+  display: grid;
+  gap: 10px;
+  align-items: center;
+  padding: 10px;
+}
+
+table {
+  border-collapse: collapse;
+  border: 2px solid rgb(140 140 140);
+  font-family: sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  position: center;
+}
+
+tfoot {
+  text-align: right;
+  background: #ff9e9e;
+}
+
+caption {
+  caption-side: top;
+  padding: 10px;
+  font-weight: bold;
+}
+
+#total-cost {
+  font-weight: bold;
+}
+
+th, td {
+  border: 1px solid rgb(160 160 160);
+  padding: 8px 10px;
+}
+
+label {
+  text-align: left;
+  font-weight: bold;
+  margin-bottom: 0px
+}
+
+/* Flex example */
+.flex-row {
+  display: flex;
+  gap: 15px;
+  margin-top: 5px;
+}
+
+.options-row {
+  display: flex;
+  flex-direction: row; /* Aligns buttons and labels in a line */
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.options-flex label {
+  flex: 0 0 45%;
+}
+
+.button-flex {
+  display: flex;
+  gap: 4px;
+}
+
+
+/* Validation feedback */
+input {
+  border-radius: 8px;
+  padding: 4px;
+  border: black;
+}
+
+input:placeholder-shown {
+  border: 2px solid black;
+}
+
+input:not(:placeholder-shown):invalid {
+  border: 2px solid red;
+}
+
+input:valid {
+  border: 2px solid green;
+}
+
+input[type="datetime-local"]:not(:focus):not(:valid) {
+  border: 2px solid black;
+}
+
+/* Then, only show red if the user is clicking it (focus) and it's still wrong */
+input[type="datetime-local"]:focus:invalid {
+  border: 2px solid red;
+}
+
+/* Show green only when the full date is correctly picked */
+input[type="datetime-local"]:valid {
+  border: 2px solid green;
+}
+
+/* Responsive breakpoint */
+@media (max-width: 600px) {
+  .main-container {
+    grid-template-columns: 1fr;
+  }
+
+  label {
+    text-align: left;
+  }
+}
